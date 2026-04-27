@@ -1,13 +1,73 @@
+:root {
+  --primary-bg: #222;
+  --secondary-bg: #111;
+  --text-main: #fff;
+  --accent-color: #c4a77d;
+  --banner-bg: #333;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --primary-bg: #f4f4f4;
+    --secondary-bg: #fff;
+    --text-main: #333;
+    --accent-color: #8b6b3f;
+    --banner-bg: #e0e0e0;
+  }
+}
+
+/* Manual toggle override */
+[data-theme="dark"] {
+  --primary-bg: #222;
+  --secondary-bg: #111;
+  --text-main: #fff;
+  --accent-color: #c4a77d;
+  --banner-bg: #333;
+}
+
+[data-theme="light"] {
+  --primary-bg: #f4f4f4;
+  --secondary-bg: #fff;
+  --text-main: #333;
+  --accent-color: #8b6b3f;
+  --banner-bg: #e0e0e0;
+}
+
+#theme-toggle {
+  background: none;
+  border: 1px solid var(--accent-color);
+  color: var(--text-main);
+  cursor: pointer;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-left: 10px;
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+#theme-toggle:hover {
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#theme-toggle img {
+  width: 32px;
+  height: auto;
+  filter: invert(var(--icon-invert, 0)); /* Allow icon inversion if needed */
+}
+
 body {
   font-family: Georgia, serif;
   margin: 0;
   padding: 0;
-  background-color: #222;
-  color: white;
+  background-color: var(--primary-bg);
+  color: var(--text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 nav {
-  background-color: #111;
+  background-color: var(--secondary-bg);
   padding: 10px;
   text-align: center;
 }
@@ -16,16 +76,23 @@ nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 nav li {
-  display: inline;
   margin: 0 15px;
 }
 
 nav a {
   color: white;
   text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #c4a77d;
 }
 
 .banner {
@@ -66,6 +133,13 @@ nav a {
   padding: 30px;
   border-radius: 8px;
   border: 1px solid #444;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Fix: Specific transitions for better performance */
+}
+
+.stat-card:hover {
+  transform: translateY(-10px);
+  background-color: #3a3a3a;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
 .stat-card h3 {
@@ -77,6 +151,24 @@ nav a {
 .stat-card p {
   margin: 10px 0 0;
   color: #bbb;
+}
+
+.stat-card .extra-info {
+  opacity: 0; /* Fix: Use opacity/visibility for transitions */
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease, height 0.5s ease, margin 0.5s ease;
+  margin-top: 0;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.stat-card:hover .extra-info {
+  opacity: 1;
+  visibility: visible;
+  height: auto;
+  margin-top: 15px;
 }
 
 #tribute {

@@ -13,6 +13,7 @@
         <li><a href="#memorial">Memorial</a></li>
         <li><a href="#tribute">Tribute</a></li>
         <li><a href="#about">About</a></li>
+        <li><button id="theme-toggle" aria-label="Toggle Dark Mode"><img src="images/nvg-toggle.png" alt="Night Vision Goggles Icon"></button></li>
       </ul>
     </nav>
 
@@ -37,19 +38,24 @@
           <div class="stat-card">
             <h3>2,400+</h3>
             <p>Service Members Fallen</p>
+            <div class="extra-info">Total recorded since Oct 2001.</div>
           </div>
           <div class="stat-card">
             <h3>20,000+</h3>
             <p>Wounded in Action</p>
+            <div class="extra-info">Purple Heart recipients.</div>
           </div>
           <div class="stat-card">
             <h3>20</h3>
             <p>Years of Operation</p>
+            <div class="extra-info">Longest conflict in US history.</div>
           </div>
           <div class="stat-card">
-            <h3>All</h3>
-            <p>Branches Represented</p>
+            <h3>Branches</h3>
+            <p>Army, Marines, Navy, Air Force</p>
+            <div class="extra-info">All major branches saw active combat.</div>
           </div>
+
         </div>
       </section>
 
@@ -85,5 +91,24 @@
     <footer>
       <p>In memory of the fallen</p>
     </footer>
+
+    <script>
+      const toggle = document.getElementById('theme-toggle');
+      const root = document.documentElement;
+      
+      // Check for saved theme
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        root.setAttribute('data-theme', savedTheme);
+      }
+
+      toggle.addEventListener('click', () => {
+        const currentTheme = root.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        root.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+      });
+    </script>
   </body>
 </html>
