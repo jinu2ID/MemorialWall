@@ -109,7 +109,7 @@ nav a:hover {
   .banner h1 {
     font-size: 3rem;
   }
-  .stats-grid {
+  #stats-display {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -122,7 +122,7 @@ nav a:hover {
   .banner {
     padding: 80px 40px;
   }
-  .stats-grid {
+  #stats-display {
     grid-template-columns: repeat(4, 1fr);
   }
 }
@@ -140,7 +140,7 @@ nav a:hover {
   max-width: 100%;
 }
 
-#stats {
+#stats-section {
   padding: 60px 20px;
   background-color: var(--secondary-bg);
   text-align: center;
