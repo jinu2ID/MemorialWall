@@ -11,6 +11,7 @@
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#memorial">Memorial</a></li>
+        <li><a href="#tribute">Tribute</a></li>
         <li><a href="#about">About</a></li>
       </ul>
     </nav>
@@ -28,6 +29,25 @@
           <figcaption>Map of Afghanistan — future versions will allow filtering by year, region, and unit</figcaption>
         </figure>
         <p>Over 2,400 U.S. service members lost their lives during operations in Afghanistan from 2001 to 2021. This memorial honors each of them.</p>
+      </section>
+
+      <section id="tribute">
+        <h2>Submit a Tribute</h2>
+        <form>
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="service-member">Service Member Name</label>
+          <input type="text" id="service-member" name="service-member" required>
+
+          <label for="message">Your Tribute</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button type="submit">Submit Tribute</button>
+        </form>
       </section>
 
       <section id="about">

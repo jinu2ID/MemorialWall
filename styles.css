@@ -48,6 +48,52 @@ nav a {
   max-width: 100%;
 }
 
+#tribute {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+#tribute h2 {
+  margin-bottom: 20px;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  background-color: #333;
+  color: white;
+  border: 1px solid gray;
+}
+
+input:user-invalid, textarea:user-invalid {
+  border-color: red;
+}
+
+input:user-valid, textarea:user-valid {
+  border-color: green;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #555;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
 #about {
   padding: 40px 20px;
   text-align: center;
