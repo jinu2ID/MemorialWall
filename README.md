@@ -2,6 +2,8 @@
 
 This document tracks the evolution of the Afghanistan Veterans Memorial site
 
+## AI Issues and Fixes
+
 ### 1. Responsive Grid Layout
 
 - **Goal:** Add a responsive grid section to display memorial data.
@@ -38,18 +40,22 @@ This document tracks the evolution of the Afghanistan Veterans Memorial site
   4. **Functional Fix:** Added a `<button>` to the `nav` and a small script to toggle a `[data-theme="dark"]` attribute.
   5. **Visibility & Contrast Fix:** Refactored all nested card elements to use the `--text-main` or `--accent-color` variables, and updated the hover state to use a variable-based background.
 
-### 4. Custom Toggle Icon (Image-based)
+### 5. HTML Validation
 
-- **Goal:** Use a thematic image (Night Vision Goggles) for the dark mode toggle.
+- **Goal:** Ensure the HTML is standard-compliant and semantic.
 - **AI Mistake:**
-  1. **Pathing Error:** Used an absolute local path from the host machine directly in the `src` attribute.
-  2. **Unstyled Asset:** Included a large image file without setting dimensions in CSS.
-  3. **Layout Break:** Used `display: inline` on `nav li` while giving the child button `display: flex`.
-  4. **Accessibility Omission:** Provided no `alt` text for the image-based button.
-  5. **Stylistic Omission:** Left a default or manual border on the image-based button, which distracted from the custom NVG icon aesthetic.
+  1. **Duplicate IDs:** Used the same `id="stats"` for both a section and a container, which is invalid HTML.
+  2. **Malformed Tags:** Left a self-closing tag on a non-void element (e.g., `<div />`), which can cause rendering issues in some browsers.
 - **Fix:**
-  1. Copied the asset into the project's `images/` folder and used a relative path.
-  2. Added CSS to constrain the image dimensions (`width: 32px`).
-  3. **Layout Fix:** Refactored the navigation to use Flexbox (`display: flex`) on the `<ul>`.
-  4. Added a descriptive `alt` attribute.
-  5. **Aesthetic Fix:** Removed the `border` and `background` from the toggle button to allow the NVG icon to stand alone cleanly.
+  1. Renamed the duplicate IDs to `id="stats-section"` and `id="stats-display"` to ensure uniqueness.
+  2. Corrected the malformed div and ensured all HTML5 tags follow proper syntax (e.g., `<div></div>`).
+
+### 6. Responsive Design (3+ Breakpoints)
+
+- **Goal:** Ensure the layout adapts to Mobile, Tablet, and Desktop.
+- **AI Mistake:**
+  1. **Lack of Viewport Control:** Refined the grid but neglected to adjust font sizes or navigation spacing for mobile, leading to "squashed" text on small screens.
+  2. **Breakpoint Hallucination:** Used a non-standard media query like `@media (min-device-pixel-ratio: 2)` to try and handle mobile layout instead of simple width-based queries.
+- **Fix:**
+  1. Implemented a "Mobile First" approach with default styles for small screens and progressive enhancement for larger screens.
+  2. Added standard width-based media queries at `768px` (Tablet) and `1024px` (Desktop) to manage font sizes, padding, and grid columns effectively.

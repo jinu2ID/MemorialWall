@@ -93,11 +93,38 @@ nav a:hover {
   color: var(--accent-color);
 }
 
+/* Mobile - Default Styles (Base) */
+.banner h1 {
+  font-size: 2rem;
+}
 .banner {
+  padding: 40px 20px;
   background-color: var(--banner-bg);
   color: var(--text-main);
   text-align: center;
-  padding: 40px;
+}
+
+/* Tablet - 768px+ */
+@media (min-width: 768px) {
+  .banner h1 {
+    font-size: 3rem;
+  }
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop - 1024px+ */
+@media (min-width: 1024px) {
+  .banner h1 {
+    font-size: 4rem;
+  }
+  .banner {
+    padding: 80px 40px;
+  }
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .map-section {
