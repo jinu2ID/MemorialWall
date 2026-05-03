@@ -1,0 +1,273 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>The Afghanistan Memorial</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#a38c7c",
+                        "primary-fixed-dim": "#ffb77c",
+                        "on-background": "#e0e3e6",
+                        "on-secondary-fixed": "#001d32",
+                        "secondary-fixed-dim": "#aacaea",
+                        "on-primary-fixed": "#2e1500",
+                        "on-error": "#690005",
+                        "surface-container": "#1c2023",
+                        "primary-fixed": "#ffdcc2",
+                        "surface-container-highest": "#313538",
+                        "outline-variant": "#554336",
+                        "inverse-on-surface": "#2d3133",
+                        "surface-container-low": "#181c1e",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed": "#cde5ff",
+                        "on-surface": "#e0e3e6",
+                        "tertiary-fixed-dim": "#acc8f3",
+                        "surface-container-high": "#262b2d",
+                        "on-secondary-fixed-variant": "#2a4965",
+                        "inverse-primary": "#904d00",
+                        "on-tertiary": "#113154",
+                        "error-container": "#93000a",
+                        "tertiary-container": "#8ca8d1",
+                        "surface-tint": "#ffb77c",
+                        "surface-variant": "#313538",
+                        "on-secondary": "#0f334d",
+                        "on-surface-variant": "#dbc2b0",
+                        "surface-dim": "#101416",
+                        "tertiary-fixed": "#d3e4ff",
+                        "primary-container": "#f28e2b",
+                        "on-primary": "#4d2700",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed-variant": "#6d3900",
+                        "on-secondary-container": "#99b8d8",
+                        "primary": "#ffb77c",
+                        "surface": "#101416",
+                        "background": "#101416",
+                        "on-primary-container": "#5e3000",
+                        "on-tertiary-container": "#1f3d60",
+                        "on-tertiary-fixed": "#001c38",
+                        "secondary-container": "#2a4965",
+                        "secondary": "#aacaea",
+                        "tertiary": "#acc8f3",
+                        "on-tertiary-fixed-variant": "#2b486c",
+                        "surface-bright": "#363a3c",
+                        "inverse-surface": "#e0e3e6",
+                        "surface-container-lowest": "#0b0f11"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "unit": "4px",
+                        "margin": "40px",
+                        "xxl": "96px",
+                        "gutter": "24px",
+                        "lg": "24px",
+                        "xl": "48px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Newsreader"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "headline-lg": ["Newsreader"],
+                        "interactive": ["Inter"],
+                        "headline-xl": ["Newsreader"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "interactive": ["14px", { "lineHeight": "1", "fontWeight": "500" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "300" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #080808; color: #e0e3e6; }
+        .glow-hover:hover {
+            box-shadow: 0 0 15px rgba(255, 183, 124, 0.2);
+        }
+        /* Hide scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #181c1e;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #313538;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #554336;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-neutral-950 text-orange-500 font-serif font-light tracking-wide border-b border-neutral-800 flex justify-between items-center px-10 h-20 shadow-none">
+<div class="text-2xl font-serif italic text-orange-500">The Afghanistan Memorial</div>
+<nav class="hidden md:flex gap-8">
+<a class="text-neutral-400 hover:text-orange-300 transition-colors duration-300" href="#">Timeline</a>
+<a class="text-neutral-400 hover:text-orange-300 transition-colors duration-300" href="#">Archive</a>
+<a class="text-orange-400 border-b-2 border-orange-500 pb-1 hover:text-orange-300 transition-colors duration-300 opacity-80 scale-95" href="#">Methodology</a>
+</nav>
+<div class="flex gap-4 items-center">
+<button class="text-neutral-400 hover:text-orange-300 transition-colors duration-300">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-neutral-400 hover:text-orange-300 transition-colors duration-300">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</header>
+<div class="flex flex-1 pt-20">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col fixed left-0 top-20 h-[calc(100vh-80px)] border-r w-72 bg-neutral-900 text-orange-500 font-serif text-sm uppercase tracking-widest border-neutral-800 shadow-xl pt-8 z-40 overflow-y-auto">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-neutral-100">military_tech</span>
+</div>
+<div>
+<h2 class="text-lg font-bold text-neutral-100 font-headline-md tracking-normal normal-case">Filter Archive</h2>
+<p class="text-neutral-500 text-xs normal-case tracking-normal">Narrowing the human cost</p>
+</div>
+</div>
+</div>
+<nav class="flex-1">
+<a class="flex items-center gap-4 text-neutral-500 px-6 py-4 hover:bg-neutral-800 hover:text-neutral-100 transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                    Overview
+                </a>
+<a class="flex items-center gap-4 text-neutral-500 px-6 py-4 hover:bg-neutral-800 hover:text-neutral-100 transition-all" href="#">
+<span class="material-symbols-outlined">military_tech</span>
+                    Service Branch
+                </a>
+<a class="flex items-center gap-4 text-neutral-500 px-6 py-4 hover:bg-neutral-800 hover:text-neutral-100 transition-all" href="#">
+<span class="material-symbols-outlined">groups</span>
+                    Unit<br></a>
+<a class="flex items-center gap-4 text-neutral-500 px-6 py-4 hover:bg-neutral-800 hover:text-neutral-100 transition-all" href="#">
+<span class="material-symbols-outlined">event</span>
+                    Deployment Year
+                </a>
+<a class="flex items-center gap-4 bg-neutral-800 text-orange-500 border-l-2 border-orange-500 px-6 py-4 hover:bg-neutral-800 hover:text-neutral-100 transition-all" href="#">
+<span class="material-symbols-outlined">map</span>
+                    Province Map
+                </a>
+</nav>
+<!-- Embedded Filters -->
+<div class="px-6 py-6 border-t border-neutral-800">
+<div class="mb-6">
+<label class="block text-neutral-500 mb-2 font-label-caps text-label-caps">Year Range</label>
+<input class="w-full accent-primary-fixed-dim bg-surface-container h-1 rounded-full appearance-none" max="2021" min="2001" type="range" value="2010">
+<div class="flex justify-between text-neutral-500 text-xs mt-2">
+<span class="">2001</span>
+<span class="">2021</span>
+</div>
+</div>
+<button class="w-full py-3 border border-outline-variant text-neutral-400 hover:border-primary-fixed-dim hover:text-primary-fixed-dim transition-colors duration-300 font-interactive text-interactive rounded flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+                    Reset Filters
+                </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-72 flex flex-col relative h-[calc(100vh-80px)]">
+<!-- Map Area -->
+<div class="flex-1 relative bg-surface-container-lowest overflow-hidden border-b border-surface-container group">
+<!-- Large, detailed map of Afghanistan provinces -->
+<img alt="Map" class="w-full h-full object-cover opacity-80 mix-blend-screen brightness-75 contrast-125 transition-transform duration-1000 group-hover:scale-105" data-alt="A highly detailed, stylized map of Afghanistan provinces rendered in a dark, archival aesthetic. The map uses deep charcoal and black tones, textured to look like physical memorial stone or aged paper. Borders between provinces are subtle, thin lines in a muted gold or rust color. The overall mood is solemn, data-driven, and respectful, fitting for a modern minimalist memorial interface. Soft, high-contrast dark mode lighting highlights the geographical features." data-location="Afghanistan" src="https://lh3.googleusercontent.com/aida/ADBb0ugJTEHcqTb-VyCoIrFNTKlcTKD-xnrYrap9HCni9fVLBS5oIs--6_UfulcuNYFGOFUoUYClteUzzP1c3nzb9RxBwSV_NIxeh_Pc5bGWdEV1jJPrSRhWsztuKoxThE3A8j9I_tyCI7AG5c1f-qqYOzPBWpwK3z5j0lk8uGIMETFDrzyvCNnaQYKmCIyVFfKtO2_glIRKPHLl3kMdt_mdClp7UV9-XZZvVMpaXwyRpVUCAR1l0_tNky3578tFUh71OBUDaKGfGDpfMhA">
+<!-- Overlay Gradient for Depth -->
+<div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-transparent pointer-events-none"></div>
+<!-- Example Province Hover Tooltip (Simulated) -->
+<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-surface-container-high/90 border border-primary-fixed-dim p-4 rounded backdrop-blur-sm shadow-xl hidden group-hover:block pointer-events-none transition-opacity duration-300 glow-hover">
+<h3 class="font-headline-md text-headline-md text-primary-fixed-dim mb-1">Helmand Province</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Fallen: <span class="text-on-surface">342</span></p>
+</div>
+</div>
+<!-- Fallen List Section -->
+<div class="h-64 bg-surface-container-lowest border-t border-surface-container p-6 overflow-y-auto">
+<div class="max-w-4xl mx-auto">
+<div class="flex justify-between items-end mb-6 border-b border-surface-container pb-2">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">The Fallen</h2>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Sorted by Date</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-4">
+<!-- List Item 1 -->
+<div class="group flex flex-col py-2 border-b border-surface-container hover:border-primary-fixed-dim transition-colors duration-300 cursor-default">
+<div class="flex items-baseline gap-3">
+<span class="font-label-caps text-label-caps text-on-surface-variant group-hover:text-primary-fixed-dim transition-colors">CPL</span>
+<span class="font-body-lg text-body-lg text-on-surface group-hover:text-white transition-colors">Johnathan A. Doe</span>
+</div>
+<div class="flex justify-between mt-1 font-body-md text-body-md text-on-surface-variant/60 text-[12px]">
+<span class="">3rd Battalion, 5th Marines</span>
+<span class="">Oct 14, 2010</span>
+</div>
+</div>
+<!-- List Item 2 -->
+<div class="group flex flex-col py-2 border-b border-surface-container hover:border-primary-fixed-dim transition-colors duration-300 cursor-default">
+<div class="flex items-baseline gap-3">
+<span class="font-label-caps text-label-caps text-on-surface-variant group-hover:text-primary-fixed-dim transition-colors">SGT</span>
+<span class="font-body-lg text-body-lg text-on-surface group-hover:text-white transition-colors">Michael T. Smith</span>
+</div>
+<div class="flex justify-between mt-1 font-body-md text-body-md text-on-surface-variant/60 text-[12px]">
+<span class="">1st Infantry Division</span>
+<span class="">Sep 02, 2011</span>
+</div>
+</div>
+<!-- List Item 3 -->
+<div class="group flex flex-col py-2 border-b border-surface-container hover:border-primary-fixed-dim transition-colors duration-300 cursor-default">
+<div class="flex items-baseline gap-3">
+<span class="font-label-caps text-label-caps text-on-surface-variant group-hover:text-primary-fixed-dim transition-colors">CAPT</span>
+<span class="font-body-lg text-body-lg text-on-surface group-hover:text-white transition-colors">Sarah J. Jenkins</span>
+</div>
+<div class="flex justify-between mt-1 font-body-md text-body-md text-on-surface-variant/60 text-[12px]">
+<span class="">160th SOAR</span>
+<span class="">Mar 12, 2008</span>
+</div>
+</div>
+<!-- List Item 4 -->
+<div class="group flex flex-col py-2 border-b border-surface-container hover:border-primary-fixed-dim transition-colors duration-300 cursor-default">
+<div class="flex items-baseline gap-3">
+<span class="font-label-caps text-label-caps text-on-surface-variant group-hover:text-primary-fixed-dim transition-colors">PFC</span>
+<span class="font-body-lg text-body-lg text-on-surface group-hover:text-white transition-colors">David L. Barnes</span>
+</div>
+<div class="flex justify-between mt-1 font-body-md text-body-md text-on-surface-variant/60 text-[12px]">
+<span class="">10th Mountain Division</span>
+<span class="">Nov 05, 2009</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="bg-neutral-950 text-neutral-500 font-serif text-[10px] tracking-tighter w-full border-t border-neutral-900 flat flex justify-between px-12 py-6 z-50 relative mt-auto fade-in transition">
+<div class="">© 2024 Archival Memorial Project. Dedicated to the fallen.</div>
+<div class="flex gap-6">
+<a class="text-neutral-600 hover:text-orange-500 transition-colors" href="#">Honor Roll</a>
+<a class="text-neutral-300 hover:text-orange-500 transition-colors" href="#">Project Data</a>
+<a class="text-neutral-600 hover:text-orange-500 transition-colors" href="#">Terms of Use</a>
+</div>
+</footer>
+
+
+</body></html>
